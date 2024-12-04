@@ -5,12 +5,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
   --mat-sys-primary: #D5C6D9;
+  --mat-sys-surface: #614D62;
+  --mdc-filled-text-field-container-color: #614D62;
+  --mat-form-field-state-layer-color: #614D62;
   --mat-sys-on-surface-variant: #D5C6D9;
   --mdc-filled-text-field-input-text-color: #FFFFFF;
-}
-
-.mdc-line-ripple::before {
-  color: #D5C6D9;
+  --mat-sys-on-surface: #D5C6D9;
 }
 
 /*Scroll*/
