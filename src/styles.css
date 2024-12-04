@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --mat-sys-primary: #614D62;
+  --mat-sys-on-surface-variant: #614D62;
+  --mdc-filled-text-field-input-text-color: #FFFFFF;
+}
+
+/*Scroll*/
+.scroll {
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: #614D62;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #614D62;
+  border-radius: 6px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #614D62;
+}
