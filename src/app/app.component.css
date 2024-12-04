@@ -52,7 +52,6 @@
         flex-direction: column;
 
         .bot {
-          margin-top: 20px;
           width: 98%;
           display: flex;
           align-items: center;
@@ -110,7 +109,7 @@
 
       mat-icon:hover {
         cursor: pointer;
-        color: #62614D;
+        color: #E3CCE6;
       }
     }
   }
