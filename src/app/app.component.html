@@ -9,8 +9,8 @@
         <span>EvaVivo</span>
       </mat-toolbar>
     </div>
-    <div class="chat-messages">
-      <div class="message-container scroll">
+    <div class="chat-messages scroll">
+      <div class="message-container ">
         <div [class]="sysMessage.type" *ngFor="let sysMessage of messages">
           <img *ngIf="sysMessage.type === 'bot'" ngSrc="./vivo.png" alt="VIVO-CHAT-BOT" width="20" height="30" priority>
           <p>{{ sysMessage.message }}</p>
