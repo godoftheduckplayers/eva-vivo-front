@@ -31,7 +31,6 @@
       background: #614D62;
 
       mat-toolbar {
-
         span {
           margin-left: 5px;
           font-size: 20px;
@@ -44,13 +43,12 @@
       height: calc(100% - 160px);
       width: calc(100% - 40px);
       padding: 20px;
-      background: #D5C6D9;
+      background: #E3CCE6;
 
       .message-container {
         height: 100%;
         width: 100%;
         display: flex;
-        justify-content: space-around;
         flex-direction: column;
 
         .bot {
@@ -64,7 +62,7 @@
           }
 
           p {
-            background: #BC96BE;
+            background: #625D6E;
             color: #FFFFFF;
             border-radius: 10px;
             padding: 20px;
@@ -79,11 +77,11 @@
 
           mat-icon {
             margin-left: 10px;
-            color: #614D62;
+            color: #62614D;
           }
 
           p {
-            background: #BC96BE;
+            background: #625D6E;
             color: #FFFFFF;
             border-radius: 10px;
             padding: 20px;
@@ -112,7 +110,7 @@
 
       mat-icon:hover {
         cursor: pointer;
-        color: #D5C6D9;
+        color: #62614D;
       }
     }
   }
