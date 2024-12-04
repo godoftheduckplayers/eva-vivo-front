@@ -8,14 +8,25 @@ import {Message} from './Message';
 })
 export class WebsocketService {
 
-  private socket: WebSocketSubject<string> | undefined;
+  private socket: WebSocketSubject<any> | undefined;
 
   constructor() {
     this.connect();
   }
 
   connect(): void {
-    this.socket = new WebSocketSubject('ws://localhost:8765');
+    this.socket = new WebSocketSubject({
+      url: 'ws://localhost:8765',
+      deserializer: ({ data }) => {
+        try {
+          console.log(data)
+          return data;
+        } catch (e) {
+          console.error('Received non-JSON message', data);
+          return data;
+        }
+      }
+    });
   }
 
   sendMessage(msg: Message): void {
@@ -27,7 +38,7 @@ export class WebsocketService {
     this.socket?.complete();
   }
 
-  getMessages(): Observable<string> | undefined {
+  getMessages(): Observable<any> | undefined {
     return this.socket?.asObservable();
   }
 }

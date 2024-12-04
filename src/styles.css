@@ -24,11 +24,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .scroll::-webkit-scrollbar-track {
-  background: #614D62;
+  background: #D5C6D9;
 }
 
 .scroll::-webkit-scrollbar-thumb {
-  background: #614D62;
+  background: #BC96BE;
   border-radius: 6px;
 }
 

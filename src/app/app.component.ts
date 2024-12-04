@@ -43,6 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
     };
     this.messages.push(currentMessage);
     this.webSocketService.sendMessage(currentMessage);
+    message.value = "";
   }
 
   ngOnDestroy(): void {
