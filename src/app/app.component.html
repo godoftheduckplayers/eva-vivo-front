@@ -20,7 +20,7 @@
     </div>
     <div class="chat-input">
       <mat-form-field class="form-field">
-        <input #message matInput placeholder="Type message"/>
+        <input (keydown.enter)="sendMessage(message)" #message matInput placeholder="Type message"/>
       </mat-form-field>
       <mat-icon (click)="sendMessage(message)" onKeyDown="">send</mat-icon>
     </div>
