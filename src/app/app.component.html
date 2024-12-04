@@ -1,24 +1,28 @@
 <div class="app-container">
   <div class="logo-container">
-    <img ngSrc="vivo.png" alt="VIVO" width="300" height="400">
+    <img ngSrc="./vivo.png" alt="VIVO" width="300" height="400" priority>
   </div>
   <div class="chat-container">
     <div class="chat-header">
       <mat-toolbar>
-        <img ngSrc="vivo.png" alt="VIVO-CHAT" width="30" height="30">
+        <img ngSrc="./vivo.png" alt="VIVO-CHAT" width="30" height="40" priority>
         <span>EvaVivo</span>
       </mat-toolbar>
     </div>
     <div class="chat-messages">
       <div class="message-container scroll">
-
+        <div [class]="sysMessage.type" *ngFor="let sysMessage of messages">
+          <img *ngIf="sysMessage.type === 'bot'" ngSrc="./vivo.png" alt="VIVO-CHAT-BOT" width="20" height="30" priority>
+          <p>{{ sysMessage.message }}</p>
+          <mat-icon *ngIf="sysMessage.type === 'user'">person</mat-icon>
+        </div>
       </div>
     </div>
     <div class="chat-input">
       <mat-form-field class="form-field">
-        <input matInput placeholder="Type message"/>
+        <input #message matInput placeholder="Type message"/>
       </mat-form-field>
-      <mat-icon>send</mat-icon>
+      <mat-icon (click)="sendMessage(message)" onKeyDown="">send</mat-icon>
     </div>
   </div>
 </div>

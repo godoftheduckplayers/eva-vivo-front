@@ -4,9 +4,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
-  --mat-sys-primary: #614D62;
-  --mat-sys-on-surface-variant: #614D62;
+  --mat-sys-primary: #D5C6D9;
+  --mat-sys-on-surface-variant: #D5C6D9;
   --mdc-filled-text-field-input-text-color: #FFFFFF;
+}
+
+.mdc-line-ripple::before {
+  color: #D5C6D9;
 }
 
 /*Scroll*/
