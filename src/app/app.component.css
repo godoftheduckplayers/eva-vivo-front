@@ -71,6 +71,7 @@
 
         .user {
           width: 98%;
+          margin-top: 20px;
           display: flex;
           justify-content: end;
           align-items: center;
