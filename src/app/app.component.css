@@ -60,7 +60,7 @@
             margin-right: 10px;
           }
 
-          p {
+          .content {
             background: #625D6E;
             color: #FFFFFF;
             border-radius: 10px;
@@ -79,7 +79,7 @@
             color: #62614D;
           }
 
-          p {
+          .content {
             background: #B6ADCB;
             color: #FFFFFF;
             border-radius: 10px;
