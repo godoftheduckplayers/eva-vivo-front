@@ -7,6 +7,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {Message} from './services/Message';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   messages: Message[] = [];
 
-  constructor(private readonly webSocketService: WebsocketService) {
+  constructor(private readonly webSocketService: WebsocketService, private readonly sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -48,5 +49,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.webSocketService.close();
+  }
+
+  sanitize(message: Message): SafeHtml {
+    if (message.type === 'bot') {
+      return this.sanitizer.bypassSecurityTrustHtml(message.message);
+    } else {
+      return this.sanitizer.bypassSecurityTrustHtml("<span>" + message.message + "</span>");
+    }
   }
 }
