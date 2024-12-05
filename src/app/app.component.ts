@@ -47,15 +47,15 @@ export class AppComponent implements OnInit, OnDestroy {
     message.value = "";
   }
 
-  ngOnDestroy(): void {
-    this.webSocketService.close();
-  }
-
   sanitize(message: Message): SafeHtml {
     if (message.type === 'bot') {
       return this.sanitizer.bypassSecurityTrustHtml(message.message);
     } else {
       return this.sanitizer.bypassSecurityTrustHtml("<span>" + message.message + "</span>");
     }
+  }
+
+  ngOnDestroy(): void {
+    this.webSocketService.close();
   }
 }
