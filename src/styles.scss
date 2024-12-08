@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #F8F8F6;
+}
+
+:root {
+  /* Principal color */
+  --mat-sys-primary: #9C77A6;
+  --mat-sys-secondary: #766287;
+  --mat-sys-tertiary: #A6778C;
+
+  --mat-sys-inverse-primary: #E3D9F1;
+
+  /* Containers and variants */
+  --mat-sys-primary-container: #D9C4E3;
+  --mat-sys-primary-fixed: #B498C3;
+  --mat-sys-primary-fixed-dim: #836F92;
+
+  --mat-sys-secondary-container: #C6BED1;
+  --mat-sys-secondary-fixed: #A698B7;
+  --mat-sys-secondary-fixed-dim: #7A7189;
+
+  --mat-sys-tertiary-container: #E5C9D1;
+  --mat-sys-tertiary-fixed: #C59BA3;
+  --mat-sys-tertiary-fixed-dim: #96727C;
+
+  /* Text container about principal colors */
+  --mat-sys-on-primary: #FFFFFF;
+  --mat-sys-on-primary-container: #4C1D58;
+  --mat-sys-on-primary-fixed: #FFFFFF;
+  --mat-sys-on-primary-fixed-variant: #D9C4E3;
+
+  --mat-sys-on-secondary: #FFFFFF;
+  --mat-sys-on-secondary-container: #302845;
+  --mat-sys-on-secondary-fixed: #FFFFFF;
+  --mat-sys-on-secondary-fixed-variant: #C6BED1;
+
+  --mat-sys-on-tertiary: #FFFFFF;
+  --mat-sys-on-tertiary-container: #4A2633;
+  --mat-sys-on-tertiary-fixed: #FFFFFF;
+  --mat-sys-on-tertiary-fixed-variant: #E5C9D1;
+
+  /* Background and errors */
+  --mat-sys-background: #F9F6FA;
+  --mat-sys-error: #BA1A1A;
+  --mat-sys-error-container: #FAD8D8;
+
+  /* Inverse */
+  --mat-sys-inverse-on-surface: #F1EAF3;
+  --mat-sys-inverse-surface: #4B3A4F;
+
+  /* Background text and errors */
+  --mat-sys-on-background: #1D1B1E;
+  --mat-sys-on-error: #FFFFFF;
+  --mat-sys-on-error-container: #601410;
+
+  /* Surface and variants */
+  --mat-sys-surface: #F4EFF4;
+  --mat-sys-surface-bright: #FFFFFF;
+  --mat-sys-surface-container: #E7E1E8;
+  --mat-sys-surface-container-high: #D3C9D6;
+  --mat-sys-surface-container-highest: #C8BCCB;
+  --mat-sys-surface-container-low: #ECE5F1;
+  --mat-sys-surface-container-lowest: #FAF8FB;
+  --mat-sys-surface-dim: #CAC1CE;
+  --mat-sys-surface-tint: #9C77A6;
+  --mat-sys-surface-variant: #DDD4E1;
+
+  /* Borders */
+  --mat-sys-outline: #817586;
+  --mat-sys-outline-variant: #C0B6C8;
+
+  /* Borders and scrim */
+  --mat-sys-shadow: #000000;
+  --mat-sys-scrim: rgba(0, 0, 0, 0.2);
+
+  /* Neutros */
+  --mat-sys-neutral-variant20: #675D6E;
+  --mat-sys-neutral10: #333033;
+
+  /* Menu colors */
+  --mat-menu-item-label-text-color: #1D1B1E;
+  --mat-menu-item-icon-color: #6E6481;
+}
+
+/*Scroll*/
+.scroll {
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: var(--mat-sys-inverse-primary);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: var(--mat-sys-tertiary);
+  border-radius: 6px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--mat-sys-primary);
+}

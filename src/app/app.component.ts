@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WebsocketService} from './services/websocket.service';
-import {NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
+import {NgForOf} from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -8,13 +8,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {Message} from './services/Message';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {MatDrawer, MatDrawerContainer} from '@angular/material/sidenav';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [NgOptimizedImage, MatToolbarModule, MatButtonModule, MatIconModule, MatFormFieldModule,
-    MatInputModule, NgForOf, NgIf],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatFormFieldModule,
+    MatInputModule, NgForOf, MatDrawerContainer, RouterOutlet, MatDrawer],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, OnDestroy {
 

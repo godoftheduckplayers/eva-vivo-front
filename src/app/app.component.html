@@ -1,29 +1,40 @@
-<div class="app-container">
-  <div class="logo-container">
-    <img ngSrc="./vivo.png" alt="VIVO" width="300" height="400" priority>
-  </div>
-  <div class="chat-container">
-    <div class="chat-header">
-      <mat-toolbar>
-        <img ngSrc="./vivo.png" alt="VIVO-CHAT" width="30" height="40" priority>
-        <span>EvaVivo</span>
-      </mat-toolbar>
-    </div>
-    <div class="chat-messages scroll">
-      <div class="message-container ">
-        <div [class]="sysMessage.type" *ngFor="let sysMessage of messages">
-          <img *ngIf="sysMessage.type === 'bot'" ngSrc="./vivo.png" alt="VIVO-CHAT-BOT" width="20"
-               height="30" priority>
-          <div class="content" [innerHTML]="sanitize(sysMessage)"></div>
-          <mat-icon *ngIf="sysMessage.type === 'user'">person</mat-icon>
+<main class="app-container">
+  <section class="app-container-left"></section>
+  <section class="app-container-middle">
+    <router-outlet></router-outlet>
+    <button class="btn-chat" type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>chat</mat-icon>
+    </button>
+    <mat-drawer-container class="app-chat-container" autosize>
+      <mat-drawer #drawer class="chat-container" mode="side" position="end" [style.width.px]="500">
+        <div class="chat-header">
+          <span>Chat</span>
+          <mat-icon class="btn-chat-close" (click)="drawer.close()" onKeyDown="">close</mat-icon>
         </div>
-      </div>
-    </div>
-    <div class="chat-input">
-      <mat-form-field class="form-field">
-        <input (keydown.enter)="sendMessage(message)" #message matInput placeholder="Type message"/>
-      </mat-form-field>
-      <mat-icon (click)="sendMessage(message)" onKeyDown="">send</mat-icon>
-    </div>
-  </div>
-</div>
+        <div class="chat-body scroll">
+          <div class="message-container">
+            <div class="message" [class]="sysMessage.type" *ngFor="let sysMessage of messages">
+              <div class="content" [innerHTML]="sanitize(sysMessage)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-footer">
+          <div class="custom-input-container">
+            <div class="input-wrapper">
+              <input
+                (keydown.enter)="sendMessage(message)"
+                #message
+                id="name"
+                type="text"
+                class="custom-input"
+                placeholder="Type message"
+              />
+            </div>
+          </div>
+          <mat-icon class="btn-chat-send" (click)="sendMessage(message)" onKeyDown="">send
+          </mat-icon>
+        </div>
+      </mat-drawer>
+    </mat-drawer-container>
+  </section>
+</main>
